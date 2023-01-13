@@ -19,12 +19,12 @@ def checkCard(number):
     new2 = 0
     conter2 = 1
 
-    #multiply element with odd index (without including 0) and store the result in a variable.
+    #add the characters with odd index (not including 0) and store the result in a variable.
     while conter2 < len(number):
         new2 = new2 +int(number[conter2])
         conter2 += 2
 
-    #add the sum of digits of the numbers multiply by 2 with the sum of the number not multiply by two and make the result a string.
+    #add the sum of digits of the numbers multiplied by 2 with the sum of the number that were not multiplied by two and make the result a string.
     david = str(new + new2)
 
     #if the last digit of that string is 0, then the credit card or debit card is valid and the function return True.
@@ -35,8 +35,8 @@ def checkCard(number):
     else:
         return False
 
-#implementation of  the cardIssuer function which takes as input the card number.
-def cardIssuer(number):
+#implementation of  the cardNetworker function which takes as input the card number.
+def cardNetwork(number):
     #if the card number start with 34 or 37, then it is American Express.
     if number[0:3] == "34" or number[0:3] == "37":
         print("American Express")
@@ -62,7 +62,7 @@ def main():
     #Take the card number as an input from the user.
     cardNumber = input("Please input your credit card number(e.g 1234567893456789):")
 
-    #Check whether the user colaborate and inputted only number
+    #Check whether the user collaborated and inputted only number
     if not (cardNumber.isdigit()):
         print("You probably type a character that is not a number. TRY AGAIN")
         sys.exit(0)
@@ -70,13 +70,13 @@ def main():
     #call the checkCard function to check the card number.
     result=checkCard(cardNumber)
 
-    #If the checkCard function return True ,then print a message to the user that the card number inputted is correct and run the cardIssuer. function
+    #If the checkCard function return True ,then print a message to the user that the card number inputted is correct and run the cardNetwork function
     if result == True:
         print("correct")
-        #call the cardIssuer function determine whether it is VISA ,Masterclass ,American Express or Discover Card. 
-        cardIssuer(cardNumber)
+        #call the cardNetwork function to determine whether it is VISA ,Masterclass ,American Express or Discover Card. 
+        cardNetwork(cardNumber)
 
-    #if the checkCard function return False, then print a message to let them know that number inputted is incorrect.
+    #if the checkCard function return False, then print a message to the user that let them know that number inputted is incorrect.
     else :
         print("incorrect")
     
