@@ -14,7 +14,7 @@ def checkCard(number):
     # iterate through each character, transform it into a number and add all of them. 
     for i in multiply2:
         new = new + int(i)
-        
+    
     #iterate through all the digit that were not multiplied by two and add them.
     new2 = 0
     conter2 = 1
@@ -72,12 +72,12 @@ def main():
 
     #If the checkCard function return True ,then print a message to the user that the card number inputted is correct and run the cardNetwork function
     if result == True:
-        print("correct")
+        print("\n.Congratulation. Your card valid! \n")
         #call the cardNetwork function to determine whether it is VISA ,Masterclass ,American Express or Discover Card. 
         cardNetwork(cardNumber)
 
     #if the checkCard function return False, then print a message to the user that let them know that number inputted is incorrect.
     else :
-        print("incorrect")
+        print("Your card is invalid.")
     
 main()
